@@ -1,9 +1,9 @@
-const express = require('express')
-const http = require('http')
-const apicache = require('apicache')
+var express = require('express')
+var http = require('http')
+var apicache = require('apicache')
 
-const app = express()
-let cache = apicache.middleware
+var app = express()
+var cache = apicache.middleware
 
 // 跨域设置
 // app.all('*', function (req, res, next) {
@@ -17,7 +17,7 @@ let cache = apicache.middleware
 //   }
 //   next()
 // })
-const onlyStatus200 = (req, res) => res.statusCode === 200
+var onlyStatus200 = (req, res) => res.statusCode === 200
 
 app.use(cache('2 minutes', onlyStatus200))
 
@@ -244,7 +244,7 @@ app.use('/user/subcount', require('./router/user_subcount'))
 
 app.use('/user/record', require('./router/user_playrecord'))
 
-const port = process.env.LEANCLOUD_APP_PORT || process.env.PORT || 3000
+var port = process.env.LEANCLOUD_APP_PORT || process.env.PORT || 3000
 
 app.listen(port, () => {
   console.log(`server running @${port}`)

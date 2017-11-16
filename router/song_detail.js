@@ -1,11 +1,11 @@
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
-  const id = parseInt(req.query.ids)
-  const data = {
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var id = parseInt(req.query.ids)
+  var data = {
     // "id": id,
     c: JSON.stringify([{ id: id }]),
     ids: '[' + id + ']',

@@ -1,16 +1,16 @@
-const express = require('express')
-const router = express()
-const request = require('request')
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var request = require('request')
+var util = require('../util/util')
 router.get('/', (req, res) => {
-  const id = parseInt(req.query.id)
-  const br = parseInt(req.query.br || 999000)
-  const data = {
+  var id = parseInt(req.query.id)
+  var br = parseInt(req.query.br || 999000)
+  var data = {
     ids: [id],
     br: br,
     csrf_token: ''
   }
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
 
   util.createWebAPIRequest(
     'music.163.com',

@@ -1,14 +1,14 @@
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 //收藏单曲到歌单，从歌单删除歌曲 op=del,add;pid=歌单id,tracks=歌曲id
 router.get('/', (req, res) => {
-  const op = req.query.op
-  const pid = req.query.pid
-  const tracks = req.query.tracks
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var op = req.query.op
+  var pid = req.query.pid
+  var tracks = req.query.tracks
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
   // console.log('COOKIESS', cookie)
-  const data = {
+  var data = {
     op: op,
     pid: pid,
     tracks: tracks,

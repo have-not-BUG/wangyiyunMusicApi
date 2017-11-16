@@ -1,17 +1,17 @@
-const assert = require('assert')
-const crypto = require('crypto')
-const util = require('../util/util')
+var assert = require('assert')
+var crypto = require('crypto')
+var util = require('../util/util')
 
 describe('测试获取歌曲是否正常', () => {
   it('歌曲的 url 不应该为空', done => {
-    const id = 347230
-    const br = 999000
-    const data = {
+    var id = 347230
+    var br = 999000
+    var data = {
       ids: [id],
       br: br,
       csrf_token: ''
     }
-    const cookie = ''
+    var cookie = ''
 
     util.createWebAPIRequest(
       'music.163.com',

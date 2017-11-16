@@ -1,12 +1,12 @@
-const assert = require('assert')
-const crypto = require('crypto')
-const util = require('../util/util')
+var assert = require('assert')
+var crypto = require('crypto')
+var util = require('../util/util')
 
 describe('测试获取评论是否正常', () => {
   it('数据的 code 应该为200', done => {
-    const rid = 32311
-    const cookie = ''
-    const data = {
+    var rid = 32311
+    var cookie = ''
+    var data = {
       offset: 0,
       rid: rid,
       limit: 20,

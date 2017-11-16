@@ -1,12 +1,12 @@
-const http = require('http')
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var http = require('http')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
-  let detail, imgurl
-  const data = {
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var detail, imgurl
+  var data = {
     id: req.query.id,
     offset: 0,
     total: true,
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
 
   // FIXME:i dont know the api to get coverimgurl
   // so i get it by parsing html
-  // const http_client = http.get({
+  // var http_client = http.get({
   //   hostname: 'music.163.com',
   //   path: '/playlist?id=' + req.query.id,
   //   headers: {
@@ -42,13 +42,13 @@ router.get('/', (req, res) => {
   //   },
   // }, function (res) {
   //   res.setEncoding('utf8')
-  //   let html = ''
+  //   var html = ''
   //   res.on('data', function (chunk) {
   //     html += chunk
   //   })
   //   res.on('end', function () {
   //     console.log('end', html)
-  //     const regImgCover = /\<img src=\"(.*)\" class="j-img"/ig
+  //     var regImgCover = /\<img src=\"(.*)\" class="j-img"/ig
   //     imgurl = regImgCover.exec(html)[1]
   //     mergeRes()
 

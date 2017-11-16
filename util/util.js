@@ -1,9 +1,9 @@
-const Encrypt = require('./crypto.js')
-const http = require('http')
-const querystring = require('querystring')
+var Encrypt = require('./crypto.js')
+var http = require('http')
+var querystring = require('querystring')
 
 function randomUserAgent() {
-  const userAgentList = [
+  var userAgentList = [
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
     'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
     'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
@@ -24,7 +24,7 @@ function randomUserAgent() {
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/13.10586',
     'Mozilla/5.0 (iPad; CPU OS 10_0 like Mac OS X) AppleWebKit/602.1.38 (KHTML, like Gecko) Version/10.0 Mobile/14A300 Safari/602.1'
   ]
-  const num = Math.floor(Math.random() * userAgentList.length)
+  var num = Math.floor(Math.random() * userAgentList.length)
   return userAgentList[num]
 }
 function createWebAPIRequest(
@@ -37,8 +37,8 @@ function createWebAPIRequest(
   errorcallback
 ) {
   var music_req = ''
-  const cryptoreq = Encrypt(data)
-  const http_client = http.request(
+  var cryptoreq = Encrypt(data)
+  var http_client = http.request(
     {
       hostname: host,
       method: method,
@@ -92,7 +92,7 @@ function createWebAPIRequest(
 function createRequest(path, method, data, callback, errorcallback) {
   return new Promise((resolve, reject) => {
     var ne_req = ''
-    const http_client = http.request(
+    var http_client = http.request(
       {
         hostname: 'music.163.com',
         method: method,

@@ -1,18 +1,18 @@
 //播放记录
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
 
   // type=1时只返回weekData, type=0时返回allData
-  const data = {
+  var data = {
     type: req.query.type || 0,
     uid: req.query.uid, //用户 id,
     csrf_token: ''
   }
-  const action = `/weapi/v1/play/record`
+  var action = `/weapi/v1/play/record`
   util.createWebAPIRequest(
     'music.163.com',
     action,

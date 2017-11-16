@@ -1,28 +1,28 @@
 //comment like
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
-  const cid = req.query.cid //评论 id
-  const id = req.query.id //  歌曲 id
-  const typeMap = {
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var cid = req.query.cid //评论 id
+  var id = req.query.id //  歌曲 id
+  var typeMap = {
     0: 'R_SO_4_', //歌曲
     1: 'R_MV_5_', //mv
     2: 'A_PL_0_', //歌单
     3: 'R_AL_3_', //专辑
     4: 'A_DJ_1_' //电台
   }
-  const type = typeMap[req.query.type]
-  const data = {
+  var type = typeMap[req.query.type]
+  var data = {
     threadId: `${type}${id}`,
     commentId: cid,
     csrf_token: ''
   }
-  const action = req.query.t == 1 ? 'like' : 'unlike'
+  var action = req.query.t == 1 ? 'like' : 'unlike'
 
-  const url = `/weapi/v1/comment/${action}`
+  var url = `/weapi/v1/comment/${action}`
   util.createWebAPIRequest(
     'music.163.com',
     url,

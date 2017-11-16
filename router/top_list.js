@@ -1,4 +1,4 @@
-const top_list_all = {
+var top_list_all = {
   '0': ['云音乐新歌榜', '/api/playlist/detail?id=3779629'],
   '1': ['云音乐热歌榜', '/api/playlist/detail?id=3778678'],
   '2': ['网易原创歌曲榜', '/api/playlist/detail?id=2884035'],
@@ -22,13 +22,13 @@ const top_list_all = {
   '20': ['台湾Hito排行榜', '/api/playlist/detail?id=112463'],
   '21': ['Beatport全球电子舞曲榜', '/api/playlist/detail?id=3812895']
 }
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const idx = req.query.idx
-  const action = 'http://music.163.com' + top_list_all[idx][1]
+  var idx = req.query.idx
+  var action = 'http://music.163.com' + top_list_all[idx][1]
   util.createRequest(`${action}`, 'GET', null)
     .then(result => {
       res.setHeader('Content-Type', 'application/json')

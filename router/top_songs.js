@@ -1,12 +1,12 @@
 //新歌上架
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 // type ALL, ZH,EA,KR,JP
 router.get('/', (req, res) => {
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
-  const data = {
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var data = {
     offset: req.query.offset,
     total: true,
     limit: req.query.limit,

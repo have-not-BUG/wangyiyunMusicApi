@@ -1,11 +1,11 @@
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
-  const id = req.query.uid
-  const data = {
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var id = req.query.uid
+  var data = {
     time: -1,
     getcounts: true,
     csrf_token: ''

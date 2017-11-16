@@ -1,12 +1,12 @@
 // 签到
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
-  let type = req.query.type || 0 //0为安卓端签到 3点经验,1为网页签到,2点经验
-  const data = {
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var type = req.query.type || 0 //0为安卓端签到 3点经验,1为网页签到,2点经验
+  var data = {
     csrf_token: '',
     type
   }

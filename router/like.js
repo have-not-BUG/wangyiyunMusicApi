@@ -1,14 +1,14 @@
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
-  const trackId = req.query.id
-  const like = req.query.like || true
-  const alg = req.query.alg || 'itembased'
-  const time = req.query.time || 25
-  const data = {
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var trackId = req.query.id
+  var like = req.query.like || true
+  var alg = req.query.alg || 'itembased'
+  var time = req.query.time || 25
+  var data = {
     csrf_token: '',
     trackId,
     like

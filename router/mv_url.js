@@ -1,16 +1,16 @@
-const express = require('express')
-const router = express()
-const request = require('request')
+var express = require('express')
+var router = express()
+var request = require('request')
 
 router.get('/', (req, res) => {
-  const url = req.query.url
-  const headers = {
+  var url = req.query.url
+  var headers = {
     Referer: 'http://music.163.com/',
     Cookie: 'appver=1.5.0.75771;',
     'Content-Type': 'video/mp4',
     Location: url
   }
-  const options = {
+  var options = {
     header: headers,
     url: url
   }

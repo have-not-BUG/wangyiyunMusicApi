@@ -1,14 +1,14 @@
-const express = require('express')
-const crypto = require('crypto')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var crypto = require('crypto')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const email = req.query.email
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
-  const md5sum = crypto.createHash('md5')
+  var email = req.query.email
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var md5sum = crypto.createHash('md5')
   md5sum.update(req.query.password)
-  const data = {
+  var data = {
     username: email,
     password: md5sum.digest('hex'),
     rememberLogin: 'true',

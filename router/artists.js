@@ -1,15 +1,15 @@
-const express = require('express')
-const router = express()
-const util = require('../util/util')
+var express = require('express')
+var router = express()
+var util = require('../util/util')
 
 router.get('/', (req, res) => {
-  const cookie = req.get('Cookie') ? req.get('Cookie') : ''
-  const data = {
+  var cookie = req.get('Cookie') ? req.get('Cookie') : ''
+  var data = {
     csrf_token: ''
   }
-  const id = req.query.id
-  const offset = req.query.offset || 0
-  const limit = req.query.limit || 50
+  var id = req.query.id
+  var offset = req.query.offset || 0
+  var limit = req.query.limit || 50
   util.createWebAPIRequest(
     'music.163.com',
     `/weapi/v1/artist/${id}?offset=${offset}&limit=${limit}`,
