@@ -36,7 +36,7 @@ function createWebAPIRequest(
   callback,
   errorcallback
 ) {
-  let music_req = ''
+  var music_req = ''
   const cryptoreq = Encrypt(data)
   const http_client = http.request(
     {
@@ -91,7 +91,7 @@ function createWebAPIRequest(
 
 function createRequest(path, method, data, callback, errorcallback) {
   return new Promise((resolve, reject) => {
-    let ne_req = ''
+    var ne_req = ''
     const http_client = http.request(
       {
         hostname: 'music.163.com',
